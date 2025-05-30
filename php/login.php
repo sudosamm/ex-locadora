@@ -8,14 +8,20 @@
     else{
         $sql = "SELECT userEmail, userPassword, userName FROM usuarios WHERE userEmail='$userEmail';";
         $consulta = $conexao -> query($sql);
+
         if($usuarios = $consulta -> fetch_assoc()){
+
             if($usuarios['userEmail'] === $userEmail && $usuarios['userPassword'] === $userPassword){
                 $logUser = $usuarios['userName'];
                 echo "O usuário ".$logUser." existe e está conectado.";
-            } else if ($usuarios['userEmail'] === $userEmail && $usuarios['userPassword'] != $userPassword){
+                $_SESSION['user'] = $logUser;
+            } 
+            else if ($usuarios['userEmail'] === $userEmail && $usuarios['userPassword'] != $userPassword){
                 echo "A senha para o usuário está incorreta.";
             }
-        }else{
+
+        }
+        else{
             echo "O email informado não está cadastrado";
         }
     }
