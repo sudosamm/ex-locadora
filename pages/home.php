@@ -7,5 +7,6 @@
 </head>
 <body>
     
+    <a href="../php/logout.php">Clique aqui para fazer o logout</a>
 </body>
 </html>

@@ -15,6 +15,9 @@
                 $logUser = $usuarios['userName'];
                 echo "O usuário ".$logUser." existe e está conectado.";
                 $_SESSION['user'] = $logUser;
+                if(isset($_SESSION["user"])){
+                    header("Location: ./pages/home.php");
+                }
             } 
             else if ($usuarios['userEmail'] === $userEmail && $usuarios['userPassword'] != $userPassword){
                 echo "A senha para o usuário está incorreta.";

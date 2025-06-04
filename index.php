@@ -1,4 +1,6 @@
 <?php
+    include_once './php/session.php';
+    include_once './php/userLogin.php';
     include_once './php/conexao.php';
 ?>
 <!DOCTYPE html>
