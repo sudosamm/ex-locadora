@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+        echo $_SESSION['user'];
+    ?>
     <a href="../php/logout.php">Clique aqui para fazer o logout</a>
 </body>
 </html>

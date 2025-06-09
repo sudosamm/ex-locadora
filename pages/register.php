@@ -1,3 +1,8 @@
+<?php
+    include_once '../php/session.php';
+    include_once '../php/userLogin.php';
+    include_once '../php/conexao.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,6 +40,12 @@
                 <a class="emptySpace"></a>
                 <input type="submit" value="Cadastrar" name="loginButton" class="loginButton" />
             </div>
+
+            <?php
+                if(isset($_POST['loginButton'])){
+                    include_once '../php/cadastro.php';
+                }
+            ?>
 
         </form>
 
